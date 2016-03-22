@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Elexim.Employee.EmployeeInfoBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Elexim.Employee"
+             mc:Ignorable="d" >
+    
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <Canvas HorizontalAlignment="Center" Background="Aqua" Width="50" Height="50" Margin="0 20"/>
+        <Label  HorizontalAlignment="Center" FontWeight="Bold" >Karim Squalli</Label>
+        <Label HorizontalAlignment="Center">17 Ans</Label>
+        <Label HorizontalAlignment="Center">3500 Dh / mois</Label>
+        <Label HorizontalAlignment="Center">50 livraison effectué</Label>
+    </StackPanel>
+</UserControl>
