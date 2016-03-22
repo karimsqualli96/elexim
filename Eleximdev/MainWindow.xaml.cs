@@ -21,7 +21,7 @@ namespace Elexim
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {k
+        {
             InitializeComponent();
             new Employee.EmployeeCrud().Show();
         }
