@@ -15,51 +15,67 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="51*"/>
-            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition />
+
         </Grid.ColumnDefinitions>
 
-        <Label HorizontalAlignment="Center" Grid.Row="0" Margin="350,0,100,0">Employés</Label>
-        <Separator Margin="20,0,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label HorizontalAlignment="Center" Grid.Row="0" >Employés</Label>
+        <Separator Margin="20,0,0,0" Grid.Row="1"/>
 
-        <Grid Grid.Row="2" Margin="0,20,0,0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="2" Margin="0,20,0,0">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
+            <TabControl Margin="10,0,0,0">
+                <TabItem Header="Vue Image">
 
-            <GroupBox Header="Liste Employés" Margin="20,0,0,0">
+                    <ListBox>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
 
-                <ListBox>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <UniformGrid Columns="3"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
 
-                    <local:EmployeeInfoBox/>
-                    <local:EmployeeInfoBox/>
-                    <local:EmployeeInfoBox/>
-                    <local:EmployeeInfoBox/>
-                    <local:EmployeeInfoBox/>
-                    <local:EmployeeInfoBox/>
-                    <local:EmployeeInfoBox/>
-                   
-                </ListBox>
-            </GroupBox>
+                        <local:EmployeeInfoBox/>
+                        <local:EmployeeInfoBox/>
+                        <local:EmployeeInfoBox/>
+                        <local:EmployeeInfoBox/>
+                        <local:EmployeeInfoBox/>
+                        <local:EmployeeInfoBox/>
+                        <local:EmployeeInfoBox/>
 
-            <GroupBox Header="Detail Employé" Margin="20,0,0,0" Grid.Column="1">
+                    </ListBox>
+                </TabItem>
+                <TabItem Header="Vue Tabulaire">
+
+                    <DataGrid>
+                       
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+
+            <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+
+            <GroupBox Header="Detail Employé" Margin="15,0,0,0" Grid.Column="1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -67,17 +83,27 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Margin="10">Nom</Label>
-                    <TextBox Grid.Column="1" VerticalAlignment="Center"/>
+                    <Border Grid.ColumnSpan="2" HorizontalAlignment="Center" BorderThickness="2" BorderBrush="Gray">
+                        <Canvas Width="80" Height="80" Background="Aqua"/>
+                    </Border>
 
-                    <Label Grid.Column="0" Grid.Row="1" Margin="10">Age</Label>
-                    <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+                    <Label Margin="10,20,0,10" Grid.Row="1" VerticalAlignment="Center">Nom</Label>
+                    <TextBox Name="nameBox"  Margin="0,20,0,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
 
-                    <Label Grid.Column="0" Grid.Row="2" Margin="10">Salaire</Label>
-                    <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+                    <Label Grid.Column="0" Grid.Row="2" Margin="10">Age</Label>
+                    <TextBox  Name="ageBox" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                    <Label Grid.Column="0" Grid.Row="3" Margin="10">Salaire</Label>
+                    <TextBox Name="salaryBox" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                    <Label Grid.Column="0" Grid.Row="4" Margin="10">Addresse</Label>
+                    <TextBox Name="addressBox" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+
+                    <Label Grid.Column="0" Grid.Row="5" Margin="10">Numéro Telephone </Label>
+                    <TextBox Name="phoneBox" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
 
                     <StackPanel Orientation="Horizontal" Grid.Column="0" 
-                                Grid.Row="3" Grid.ColumnSpan="2"
+                                Grid.Row="6" Grid.ColumnSpan="2"
                                 HorizontalAlignment="Right">
                         <Button Margin="10" MinWidth="100">Valider</Button>
                         <Button Margin="10" MinWidth="100">Annuler</Button>
