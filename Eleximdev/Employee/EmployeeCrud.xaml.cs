@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace Elexim.Employee
 {
     /// <summary>
@@ -22,6 +24,11 @@ namespace Elexim.Employee
         public EmployeeCrud()
         {
             InitializeComponent();
+        }
+
+        public void LoadData()
+        {
+
         }
     }
 }
