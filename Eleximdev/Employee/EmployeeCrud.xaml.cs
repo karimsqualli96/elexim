@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
+using System.Data;
+using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace Elexim.Employee
 {
@@ -24,10 +27,35 @@ namespace Elexim.Employee
         public EmployeeCrud()
         {
             InitializeComponent();
+            LoadData();
         }
 
         public void LoadData()
         {
+
+            AppSettingsReader reader = new AppSettingsReader();
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder()
+            {
+                Database = (string)reader.GetValue("MYSQL_DATABASE", typeof(string)),
+                Password = (string)reader.GetValue("MYSQL_PASS", typeof(string)),
+                UserID = (string)reader.GetValue("MYSQL_USER", typeof(string)),
+                Server = (string)reader.GetValue("MYSQL_SERVER", typeof(string)),
+            };
+
+            using(MySqlConnection con = new MySqlConnection(builder.ConnectionString))
+            {
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+                adapter.SelectCommand = new MySqlCommand("SELECT * FROM employee", con);
+
+                adapter.Fill(table);
+
+                employeeGrid.DataContext = table.DefaultView;
+
+      
+            }
+
 
         }
     }

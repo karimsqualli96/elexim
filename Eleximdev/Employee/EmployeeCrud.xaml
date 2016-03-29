@@ -56,9 +56,7 @@
                 </TabItem>
                 <TabItem Header="Vue Tabulaire">
 
-                    <DataGrid>
-                       
-                    </DataGrid>
+                    <DataGrid Name="employeeGrid" ItemsSource="{Binding}"/>
                 </TabItem>
             </TabControl>
 

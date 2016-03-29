@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Elexim
+namespace Elexim.Employee
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour ExpenseView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ExpenseView : Window
     {
-        public MainWindow()
+        public ExpenseView()
         {
             InitializeComponent();
-            new Employee.ExpenseView().Show();
         }
     }
 }
